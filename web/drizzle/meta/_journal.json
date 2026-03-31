@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1774880385538,
+      "tag": "0000_quick_gorgon",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774889100000,
+      "tag": "0001_single_election_year",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1774893600000,
+      "tag": "0002_election_revisions",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1774902600000,
+      "tag": "0003_comparison_cycles",
+      "breakpoints": true
+    }
+  ]
+}
