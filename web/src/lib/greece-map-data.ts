@@ -9,6 +9,7 @@ export type GreeceMapShape = {
   anchorY: number;
   labelX: number;
   labelY: number;
+  connectorStyle?: "elbow" | "straight";
   labelAlign?: "start" | "end";
   labelLines?: string[];
   paths: string[];
@@ -123,8 +124,9 @@ export const greeceMapShapes: Record<string, GreeceMapShape> = {
   "attiki": {
     anchorX: 375,
     anchorY: 520,
-    labelX: 400,
-    labelY: 600,
+    labelX: 390,
+    labelY: 630,
+    connectorStyle: "straight",
     labelAlign: "end",
     labelLines: ["Αττική"],
     paths: [

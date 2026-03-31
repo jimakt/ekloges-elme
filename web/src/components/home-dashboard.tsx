@@ -1010,6 +1010,7 @@ function GreeceMap({
               ? shape.labelLines
               : [region.name];
           const calloutStroke = selected ? "#111111" : "#44403c";
+          const usesStraightConnector = shape.connectorStyle === "straight";
           const elbowX = shape.anchorX;
           const elbowY = shape.labelY;
 
@@ -1046,24 +1047,38 @@ function GreeceMap({
                 fill={calloutStroke}
                 className="pointer-events-none transition-all duration-150"
               />
-              <line
-                x1={shape.anchorX}
-                y1={shape.anchorY}
-                x2={elbowX}
-                y2={elbowY}
-                stroke={calloutStroke}
-                strokeWidth={selected ? 3 : 2.2}
-                className="pointer-events-none transition-all duration-150"
-              />
-              <line
-                x1={elbowX}
-                y1={elbowY}
-                x2={shape.labelX}
-                y2={shape.labelY}
-                stroke={calloutStroke}
-                strokeWidth={selected ? 3 : 2.2}
-                className="pointer-events-none transition-all duration-150"
-              />
+              {usesStraightConnector ? (
+                <line
+                  x1={shape.anchorX}
+                  y1={shape.anchorY}
+                  x2={shape.labelX}
+                  y2={shape.labelY}
+                  stroke={calloutStroke}
+                  strokeWidth={selected ? 3 : 2.2}
+                  className="pointer-events-none transition-all duration-150"
+                />
+              ) : (
+                <>
+                  <line
+                    x1={shape.anchorX}
+                    y1={shape.anchorY}
+                    x2={elbowX}
+                    y2={elbowY}
+                    stroke={calloutStroke}
+                    strokeWidth={selected ? 3 : 2.2}
+                    className="pointer-events-none transition-all duration-150"
+                  />
+                  <line
+                    x1={elbowX}
+                    y1={elbowY}
+                    x2={shape.labelX}
+                    y2={shape.labelY}
+                    stroke={calloutStroke}
+                    strokeWidth={selected ? 3 : 2.2}
+                    className="pointer-events-none transition-all duration-150"
+                  />
+                </>
+              )}
               <text
                 x={labelTextX}
                 y={shape.labelY}
