@@ -140,7 +140,7 @@ export const greeceMapShapes: Record<string, GreeceMapShape> = {
     anchorX: 569.4,
     anchorY: 550.5,
     labelX: 690,
-    labelY: 480,
+    labelY: 500,
     labelAlign: "start",
     labelLines: ["Αιγαίο"],
     paths: [
